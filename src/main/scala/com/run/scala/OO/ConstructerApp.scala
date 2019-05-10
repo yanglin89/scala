@@ -13,6 +13,9 @@ object ConstructerApp {
     /*val person3 = new Person2("wang","male")
     println(person3.name +".."+ person3.age +".."+ person3.school +".."+ person3.gender)*/
 
+    val student = new Student("sigmund",18,"math")
+    println(student.name + "--" + student.major + "--" + student.gender +"--" + student.school)
+
   }
 
 }
@@ -38,3 +41,36 @@ class Person2(val name:String,val age:Int){
 
   println("Person exit")
 }
+
+
+// 继承，子类中包含父类中没有的属性时，一定要给改属性加上 val var ，否则外面访问不到
+class Student(name:String,age:Int,val major:String) extends Person2(name,age) {
+  println("student entry")
+
+  override val school: String = "newSchool"
+
+  println("student exit")
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
